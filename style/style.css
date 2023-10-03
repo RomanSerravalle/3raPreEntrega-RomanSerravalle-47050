@@ -43,6 +43,11 @@ span {
   width: 15%;
 }
 
+.navBar p {
+  position: absolute;
+  background: red;
+}
+
 .carrito {
   margin: 0px 20px 0px 20px;
   background-color: #0be29a;
@@ -55,11 +60,11 @@ span {
 }
 
 .carrito img {
-  margin-top: 8px;
-  margin-right: 5px;
   text-align: center;
-  width: 90%;
-  height: 75%;
+  margin-top: 5px;
+  margin-left: px;
+  width: 110%;
+  height: 90%;
 }
 
 .carrito:link {
@@ -72,8 +77,17 @@ span {
   scale: 1.05;
 }
 
-#cantidadProductos {
+.cantidadProductos {
   font-weight: bolder;
+}
+
+.cantidadBoton {
+  font-size: 13px;
+  position: absolute;
+  color: white;
+  padding: 0px 6px 0px 6px;
+  border-radius: 8px;
+  background: rgb(83, 83, 83);
 }
 
 .offcanvas {

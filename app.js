@@ -1,4 +1,3 @@
-const spanCantidad = document.querySelector("#cantidadProductos");
 const spanTotalCarrito = document.querySelector("#totalCarrito");
 const divProductos = document.querySelector("#productos");
 const divCarrito = document.querySelector("#carrito");
@@ -181,7 +180,12 @@ class Carrito {
       });
     }
 
-    spanCantidad.innerHTML = this.cantidad;
+    //Asignar cantidad a contadores
+    const spanCantidad = document.querySelectorAll(".cantidadProductos");
+    spanCantidad.forEach((span) => {
+      span.innerHTML = this.cantidad;
+    });
+
     spanTotalCarrito.innerText = this.total;
   }
 }
