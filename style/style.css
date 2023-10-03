@@ -51,6 +51,7 @@ span {
   border-radius: 15px;
   width: 80px;
   height: 80px;
+  transition: all 0.2s;
 }
 
 .carrito img {
@@ -58,7 +59,7 @@ span {
   margin-right: 5px;
   text-align: center;
   width: 90%;
-  height: 80%;
+  height: 75%;
 }
 
 .carrito:link {
@@ -68,6 +69,7 @@ span {
 
 .carrito:hover {
   background-color: #7decc7;
+  scale: 1.05;
 }
 
 #cantidadProductos {
@@ -80,6 +82,11 @@ span {
 
 .btnQuitar {
   margin: 20px;
+  transition: all 0.2s;
+}
+
+.btnQuitar:hover {
+  scale: 1.05;
 }
 
 .productoCarrito {
@@ -111,10 +118,12 @@ button {
   border: none;
   border-radius: 15px;
   cursor: pointer;
+  transition: all 0.2s;
 }
 
 button:hover {
   background-color: #7decc7;
+  scale: 1.05;
 }
 
 .card img {
