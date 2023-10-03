@@ -1,0 +1,131 @@
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap";
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(90deg, rgb(34, 34, 34) 0%, rgb(92, 92, 92) 100%);
+  color: white;
+  text-shadow: 1px 1px 2px rgb(0, 0, 0);
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  padding: 20px;
+  font-weight: bolder;
+}
+
+span {
+  color: #7decc7;
+}
+
+#productos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.navBar {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.navBar img {
+  height: 15%;
+  width: 15%;
+}
+
+.carrito {
+  margin: 0px 20px 0px 20px;
+  background-color: #0be29a;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  width: 80px;
+  height: 80px;
+}
+
+.carrito img {
+  margin-top: 8px;
+  margin-right: 5px;
+  text-align: center;
+  width: 90%;
+  height: 80%;
+}
+
+.carrito:link {
+  background-color: #0be29a;
+  box-shadow: none;
+}
+
+.carrito:hover {
+  background-color: #7decc7;
+}
+
+#cantidadProductos {
+  font-weight: bolder;
+}
+
+.offcanvas {
+  background: linear-gradient(90deg, rgb(77, 77, 77) 0%, rgb(92, 92, 92) 100%);
+}
+
+.btnQuitar {
+  margin: 20px;
+}
+
+.productoCarrito {
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 25px;
+  border: dashed #929292;
+}
+#inputBuscar {
+  width: 14%;
+  padding: 9px;
+}
+
+.card {
+  width: calc(20% - 10px);
+  margin: 10px;
+  padding: 15px;
+  background: linear-gradient(90deg, rgb(77, 77, 77) 0%, rgb(92, 92, 92) 100%);
+  border: 1px solid #0be29a;
+  text-align: center;
+  border-radius: 10px;
+}
+
+button {
+  background-color: #0be29a;
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  font-weight: bolder;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #7decc7;
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.precio {
+  font-weight: bold;
+  color: aquamarine;
+  font-weight: bold;
+  font-size: 24px;
+}
