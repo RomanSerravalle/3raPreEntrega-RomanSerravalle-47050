@@ -36,7 +36,7 @@ class BaseDeDatos {
       "NVIDIA GTX 1650 Super",
       135000,
       "Tarjeta gráfica",
-      "1650-super.png",
+      "nvidia-1650.png",
       "4GB VRAM - Memoria GDDR6 - Frecuencia de 1740 MHz"
     );
     this.agregarProducto(
