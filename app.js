@@ -27,52 +27,84 @@ class BaseDeDatos {
       1,
       "NVIDIA RTX 2070",
       180000,
-      "GPU",
+      "Tarjeta gráfica",
       "rtx2070.jpg",
-      "8GB VRAM - Memoria GDDR6 - 1410 MHz"
+      "8GB VRAM - Memoria GDDR6 - Frecuencia de 1410 MHz"
     );
     this.agregarProducto(
       2,
       "NVIDIA GTX 1650 Super",
       135000,
-      "GPU",
+      "Tarjeta gráfica",
       "1650-super.png",
-      "4GB VRAM - Memoria GDDR6 - 1740 MHz"
+      "4GB VRAM - Memoria GDDR6 - Frecuencia de 1740 MHz"
     );
     this.agregarProducto(
       3,
-      "AMD RX 6600 XT",
-      300000,
-      "GPU",
-      "rx6600.png",
-      "8GB VRAM - Memoria GDDR6 - 2359 MHz"
+      "NVIDIA RTX 4080",
+      1500000,
+      "Tarjeta gráfica",
+      "nvidia-4080.png",
+      "16GB VRAM - Memoria GDDR6X - Frecuencia de 2510 MHz"
     );
     this.agregarProducto(
       4,
-      "AMD RX 580",
-      210000,
-      "GPU",
-      "rx-580.png",
-      "8GB VRAM - Memoria GDDR5 - 1257 MHz"
+      "AMD RX 6600 XT",
+      300000,
+      "Tarjeta gráfica",
+      "rx6600.png",
+      "8GB VRAM - Memoria GDDR6 - Frecuencia de 2359 MHz"
     );
     this.agregarProducto(
       5,
+      "AMD RX 580",
+      210000,
+      "Tarjeta gráfica",
+      "rx-580.png",
+      "8GB VRAM - Memoria GDDR5 - Frecuencia de 1257 MHz"
+    );
+    this.agregarProducto(
+      6,
+      "AMD RX 7900 XT",
+      1350000,
+      "Tarjeta gráfica",
+      "rx7900.png",
+      "20GB VRAM - Memoria GDDR6 - Frecuencia de 2400 MHz"
+    );
+    this.agregarProducto(
+      7,
       "Intel i7 7700",
       100000,
       "CPU",
       "i7-7700.png",
-      "4 núcleos - 8 hilos - Hasta 4.20 GHZ de frecuencia máxima"
+      "4 núcleos - 8 hilos - Hasta 4.20 GHz de frecuencia"
     );
     this.agregarProducto(
-      6,
+      8,
+      "Intel i9 13900k",
+      985000,
+      "CPU",
+      "i9-13900k.png",
+      "24 núcleos - 32 hilos - Hasta 5.80 GHz de frecuencia"
+    );
+    this.agregarProducto(
+      9,
       "AMD Ryzen 5 7600",
       150000,
       "CPU",
-      "amd-ryzen.png",
-      "6 núcleos - 12 hilos - Hasta 5.10 GHZ de frecuencia máxima"
+      "amd-ryzen5.png",
+      "6 núcleos - 12 hilos - Hasta 5.10 GHz de frecuencia"
     );
     this.agregarProducto(
-      7,
+      10,
+      "AMD Ryzen 9 7950X",
+      770000,
+      "CPU",
+      "amd-ryzen9.png",
+      "16 núcleos - 32 hilos - Hasta 4.5 GHz de frecuencia"
+    );
+    this.agregarProducto(
+      11,
       "RAM Corsair DDR4 8GB",
       25000,
       "Memoria RAM",
@@ -80,7 +112,7 @@ class BaseDeDatos {
       "Memoria VENGEANCE® LPX - 8GB RAM DDR4- 2400MHz"
     );
     this.agregarProducto(
-      8,
+      12,
       "RAM Patriot DDR4 8GB",
       30000,
       "Memoria RAM",
@@ -225,6 +257,7 @@ function cargarCatalogo(productos) {
     <div class="card">
     <h2>${producto.nombre}</h2> 
     <p class="precio">$${producto.precio}</p>
+    <p class="categoria">${producto.categoria}</p>
     <div class="imagen">
     <img src="img/${producto.imagen}" alt="${producto.nombre}"/>
     </div>

@@ -176,6 +176,17 @@ button:hover {
 .precio {
   font-weight: bold;
   color: aquamarine;
-  font-weight: bold;
   font-size: 24px;
+  border-radius: 10px;
+  border: 2px solid aquamarine;
+}
+
+.categoria {
+  font-weight: bold;
+  color: aquamarine;
+  font-size: 20px;
+}
+
+.specsProducto {
+  font-size: 18px;
 }
