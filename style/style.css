@@ -64,7 +64,7 @@ span {
   margin-top: 5px;
   margin-left: px;
   width: 110%;
-  height: 90%;
+  height: 85%;
 }
 
 .carrito:link {
@@ -75,6 +75,26 @@ span {
 .carrito:hover {
   background-color: #7decc7;
   scale: 1.05;
+}
+
+.productoComprado {
+  background: linear-gradient(90deg, #00b377 0%, #48ffc2 100%);
+  text-shadow: none;
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 1px #7decc7;
+  color: black;
+}
+
+.productoQuitado {
+  background: linear-gradient(90deg, #b90000 0%, #ff4646 100%);
+  text-shadow: none;
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 1px #8d0000;
+  color: black;
 }
 
 .cantidadProductos {
@@ -103,12 +123,19 @@ span {
   scale: 1.05;
 }
 
+.alertComprar {
+  color: white;
+  padding: 50px;
+  background: linear-gradient(90deg, rgb(34, 34, 34) 0%, rgb(92, 92, 92) 100%);
+}
+
 .productoCarrito {
   text-align: center;
   margin-bottom: 10px;
   padding: 25px;
   border: dashed #929292;
 }
+
 #inputBuscar {
   width: 14%;
   padding: 9px;

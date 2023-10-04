@@ -1,7 +1,9 @@
+const spanCantidad = document.querySelectorAll(".cantidadProductos");
 const spanTotalCarrito = document.querySelector("#totalCarrito");
 const divProductos = document.querySelector("#productos");
 const divCarrito = document.querySelector("#carrito");
 const inputBuscar = document.querySelector("#inputBuscar");
+const botonComprarCarrito = document.querySelector("#btnComprarCarrito");
 
 //Clase de productos
 class Producto {
@@ -141,16 +143,36 @@ class Carrito {
     this.listar();
   }
 
+  vaciarCarrito() {
+    this.total = 0;
+    this.cantidad = 0;
+    this.carrito = [];
+    localStorage.setItem("Carrito", JSON.stringify(this.carrito));
+  }
+
   //Quitar producto del carrito
   quitar(id) {
-    //Buscar índice según ID
-    const indice = this.carrito.findIndex((producto) => producto.id === id);
-    //Restar cantidad o quitar producto
-    this.carrito[indice].cantidad > 1
-      ? this.carrito[indice].cantidad--
-      : this.carrito.splice(indice, 1);
-    localStorage.setItem("Carrito", JSON.stringify(this.carrito));
-    this.listar();
+    //Buscar nombre del producto
+    const productoQuitar = this.carrito.find((producto) => producto.id === id);
+
+    if (productoQuitar) {
+      //Buscar índice según ID
+      const indice = this.carrito.findIndex((producto) => producto.id === id);
+      //Restar cantidad o quitar producto
+      this.carrito[indice].cantidad > 1
+        ? this.carrito[indice].cantidad--
+        : this.carrito.splice(indice, 1);
+      localStorage.setItem("Carrito", JSON.stringify(this.carrito));
+
+      Toastify({
+        text: `${productoQuitar.nombre} fue quitado del carrito.`,
+        className: "productoQuitado",
+        duration: 1000,
+        position: "center",
+      }).showToast();
+
+      this.listar();
+    }
   }
 
   //Mostrar productos en HTML
@@ -181,7 +203,6 @@ class Carrito {
     }
 
     //Asignar cantidad a contadores
-    const spanCantidad = document.querySelectorAll(".cantidadProductos");
     spanCantidad.forEach((span) => {
       span.innerHTML = this.cantidad;
     });
@@ -222,6 +243,13 @@ function cargarCatalogo(productos) {
       const producto = bDatos.productoPorId(idProducto);
 
       carrito.comprar(producto);
+
+      Toastify({
+        text: `Se agregó ${producto.nombre} al carrito.`,
+        className: "productoComprado",
+        duration: 1000,
+        position: "center",
+      }).showToast();
     });
   }
 }
@@ -232,4 +260,19 @@ inputBuscar.addEventListener("input", (event) => {
   const palabra = inputBuscar.value;
   const producto = bDatos.productosPorNombre(palabra);
   cargarCatalogo(producto);
+});
+
+botonComprarCarrito.addEventListener("click", (event) => {
+  event.preventDefault;
+  carrito.vaciarCarrito();
+  carrito.listar();
+
+  Swal.fire({
+    customClass: "alertComprar",
+    position: "center",
+    icon: "success",
+    title: "¡Gracias por la compra!",
+    showConfirmButton: false,
+    timer: 1500,
+  });
 });
