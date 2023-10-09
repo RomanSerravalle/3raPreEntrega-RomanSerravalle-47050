@@ -27,6 +27,15 @@
       <img src="img/velen-logo.png" alt="Logo de Velen Computación" />
 
       <input id="inputBuscar" type="text" placeholder="Buscar productos..." />
+      <div class="filtrarPorCategoria">
+        <label for="filtroCategoria">Filtrar por categoría:</label>
+        <select id="filtroCategoria">
+          <option value="Todos">Todos los productos</option>
+          <option value="Tarjeta gráfica">Tarjeta gráfica</option>
+          <option value="CPU">CPU</option>
+          <option value="Memoria RAM">Memoria RAM</option>
+        </select>
+      </div>
       <a
         class="carrito btn btn-primary ms-auto"
         data-bs-toggle="offcanvas"
@@ -40,6 +49,7 @@
     </nav>
     <main>
       <h1>¡Bienvenido a Velen Computación!</h1>
+
       <!-- CATÁLOGO -->
 
       <div id="productos"></div>
@@ -86,6 +96,6 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
-    <script src="app.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>

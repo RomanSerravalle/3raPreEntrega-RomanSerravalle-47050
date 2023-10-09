@@ -4,6 +4,7 @@ const divProductos = document.querySelector("#productos");
 const divCarrito = document.querySelector("#carrito");
 const inputBuscar = document.querySelector("#inputBuscar");
 const botonComprarCarrito = document.querySelector("#btnComprarCarrito");
+const filtroCategoria = document.querySelector("#filtroCategoria");
 
 //Clase de productos
 class Producto {
@@ -138,9 +139,11 @@ class BaseDeDatos {
   }
 
   //Devuelve productos por nombre
-  productosPorNombre(palabra) {
-    return this.productos.filter((producto) =>
-      producto.nombre.toLowerCase().includes(palabra.toLowerCase())
+  productosPorNombre(palabra, categoria) {
+    return this.productos.filter(
+      (producto) =>
+        producto.nombre.toLowerCase().includes(palabra.toLowerCase()) &&
+        (categoria === "Todos" || producto.categoria === categoria)
     );
   }
 }
@@ -291,8 +294,12 @@ function cargarCatalogo(productos) {
 inputBuscar.addEventListener("input", (event) => {
   event.preventDefault();
   const palabra = inputBuscar.value;
-  const producto = bDatos.productosPorNombre(palabra);
-  cargarCatalogo(producto);
+  const categoriaSeleccionada = filtroCategoria.value;
+  const productosFiltrados = bDatos.productosPorNombre(
+    palabra,
+    categoriaSeleccionada
+  );
+  cargarCatalogo(productosFiltrados);
 });
 
 botonComprarCarrito.addEventListener("click", (event) => {
@@ -308,4 +315,22 @@ botonComprarCarrito.addEventListener("click", (event) => {
     showConfirmButton: false,
     timer: 1500,
   });
+});
+
+// Filtrar productos por categoría
+function filtrarProductosPorCategoria(categoria) {
+  if (categoria === "Todos") {
+    cargarCatalogo(bDatos.traerProductos());
+  } else {
+    const productosFiltrados = bDatos
+      .traerProductos()
+      .filter((producto) => producto.categoria === categoria);
+    cargarCatalogo(productosFiltrados);
+  }
+}
+
+// Evento selección de categoría
+filtroCategoria.addEventListener("change", () => {
+  const categoriaSeleccionada = filtroCategoria.value;
+  filtrarProductosPorCategoria(categoriaSeleccionada);
 });
